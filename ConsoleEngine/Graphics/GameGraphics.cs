@@ -90,6 +90,7 @@ namespace ConsoleEngine.ConsoleGraphics
         #endregion 
 
         public static Thread renderThread; //Поток с рендером
+        public const short backColor = (short)0;
         public const char trnsprChar = '░'; //Символ, считающийся как прозрачный
         public static short width, height; //Ширина и высота окна и буффера
         public static bool focused; //Стоит ли фокус на рендере?
@@ -127,7 +128,13 @@ namespace ConsoleEngine.ConsoleGraphics
                 {
                     if (SceneManager.currentScene != null) //Если сцена создана
                     {
-                        CharInfo[] frame = new CharInfo[width * height]; //Получаем буффер символов размером с консоль
+                        
+                        int size = width * height;
+                        CharInfo[] frame = new CharInfo[size]; //Получаем буффер символов размером с консоль
+                        for(int i = 0; i < size; i++)
+                        {
+                            frame[i].Attributes = backColor;
+                        }   
                         SmallRect rect = new SmallRect() { Left = 0, Top = 0, Right = width, Bottom = height }; //Рисовать будем во всей консоли
                         List<GameObject> objects = SceneManager.currentScene.gameObjects; //Получаем список объектов со сцены
                         for (int j = 0; j < objects.Count; j++) //Для каждого объекта

@@ -37,7 +37,6 @@ namespace ConsoleEngine.Components
         }
         public override void Update()
         {
-
             if (isLeftPlayer)
             {
                 bool s = InputManager.GetKeyPress(Keys.S), w = InputManager.GetKeyPress(Keys.W);
@@ -75,7 +74,6 @@ namespace ConsoleEngine.Components
                 }
             }
         }
-
     }
     class Ball : GameComponent
     {

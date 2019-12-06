@@ -72,6 +72,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Resources\defalutScene.scn" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ConsoleEngine\Editor\GameEditorForm.resx">
@@ -85,6 +86,9 @@
   <ItemGroup>
     <Folder Include="Resources\Prefabs\" />
     <Folder Include="Resources\Sprites\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\sprites.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

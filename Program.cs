@@ -14,7 +14,7 @@ namespace Pong
             }
             else
             {
-                GameEngine.Init(200, 50, true);
+                GameEngine.Init(120, 50, true);
             }
         }
     }
